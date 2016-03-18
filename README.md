@@ -1,0 +1,2 @@
+# popterms
+PopTerms is a simple web application that allows to use controlled vocabularies managed by TemaTres and integrate it with any web form or web application.  PopTerms do not requires TemaTres, You dont need to have your own TemaTres installation. You can use any vocabulary available in TemaTres.  PopTerms use the terminological web services provided by TemaTres. There are more than 300 vocabularies. You can browse, search and select terms and use them in your tool or system. 
