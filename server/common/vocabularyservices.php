@@ -40,6 +40,10 @@ function getURLdata($url){
 	   curl_setopt($rCURL, CURLOPT_URL, $url);
 	   curl_setopt($rCURL, CURLOPT_HEADER, 0);
 	   curl_setopt($rCURL, CURLOPT_RETURNTRANSFER, 1);
+
+	   // Hard declare the user agent to prevent some server policies about access to remote files ==> thank's to Nicolas POULAIN
+	   curl_setopt($rCURL,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+
 	   $xml = curl_exec($rCURL) or die ("Could not open a feed called: " . $url);
 	   curl_close($rCURL);
 

@@ -23,42 +23,57 @@
 CONFIGURATION
 ***************************************************************************************
 */
+
+//Debug config
+/*
+error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+ ini_set("display_errors", 1);
+*/
 $URL_BASE='';
 $lang_tematres='';
+
+/*
+ * Enables vocabularies services
+ */
+$CFG_VOCABS[1]["ALIAS"]="DEMO";
+$CFG_VOCABS[1]["URL_BASE"]="http://vocabularyserver.com/unesco//en/services.php";
+$CFG_VOCABS[1]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+/*
+//You can add many enables vocabularies:
+$CFG_VOCABS[N]["ALIAS"]="FAMILIA";
+$CFG_VOCABS[N]["URL_BASE"]="http://vocabularios.saij.gob.ar/familia/services.php";
+$CFG_VOCABS[N]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+*/
+
+
 $CFG["ENCODE"]='UTF-8';
-  error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
-  ini_set("display_errors", 1);
+
+//Define accepted params from GET
+$CFG["ENABLE_TASK"]=array("fetchTerm","search","letter","fetchLast");
+
 // lang :
 $lang_tematres = "es_AR" ;
 
-
-/*
- * Servers configuration
- */
-
-$CFG_VOCABS[1]["ALIAS"]="SAIJ";
-$CFG_VOCABS[1]["URL_BASE"]="http://vocabularios.saij.gob.ar/saij/services.php";
-$CFG_VOCABS[1]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-
-$CFG_VOCABS[2]["ALIAS"]="INAP";
-$CFG_VOCABS[2]["URL_BASE"]="http://vocabularios.saij.gob.ar/inap/services.php";
-$CFG_VOCABS[2]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-
-$CFG_VOCABS[3]["ALIAS"]="FAMILIA";
-$CFG_VOCABS[3]["URL_BASE"]="http://vocabularios.saij.gob.ar/familia/services.php";
-$CFG_VOCABS[3]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+//$CFG_URL_PARAM["fetchTerm"]='term/';
+$CFG_URL_PARAM["fetchTerm"]='index.php?task=fetchTerm&amp;arg=';
+["URIfetchTerm"]='fetchTerm/';
+$CFG_URL_PARAM["search"]='index.php?task=search&amp;arg=';
+["letter"]='index.php?task=letter&amp;arg=';
+	
+//search strings with more than x chars
+$CFG["MIN_CHAR_SEARCH"]=2;
 
 
-/*fetch params*/
-session_start();
-
+// change to whatever timezone you want
+if(date_default_timezone_get()!=ini_get('date.timezone')){
+	date_default_timezone_set('Etc/UTC');
+}
 
 /*  In almost cases, you don't need to touch nothing here!!
  *  Absolute path to the directory where are located /common/include. 
  */
-
-date_default_timezone_set('America/Buenos_Aires');
-
 if ( !defined('WEBTHES_ABSPATH') )
 	/** Use this for version of PHP < 5.3 */
 	define('WEBTHES_ABSPATH', dirname(__FILE__).'/');
@@ -70,24 +85,16 @@ if ( !defined('WEBTHES_PATH') )
 	require_once("common/lang/$lang_tematres.php") ;
 	require_once('common/vocabularyservices.php');
 
-	if ((!isset($_SESSION['_PARAMS'])) || ($_GET["lc"]==1))
-	{
+	
+
+/*fetch params*/
+session_start();
+	
+	if ((!isset($_SESSION['_PARAMS'])) || ($_GET["lc"]==1))	{
 		$_SESSION['_PARAMS']["target_x"] = $_GET["tx"];
 		$_SESSION['_PARAMS']["vocab_id"] = loadVocabularyID($_GET["v"]);
 		$_SESSION['_PARAMS']["URL_BASE"] = $CFG_VOCABS[$_SESSION['_PARAMS']["vocab_id"]]["URL_BASE" ];
 	}
 
 	$URL_BASE=$_SESSION['_PARAMS']["URL_BASE"];
-
-	//$CFG_URL_PARAM["fetchTerm"]='term/';
-	$CFG_URL_PARAM["fetchTerm"]='index.php?task=fetchTerm&amp;arg=';
-	$CFG_URL_PARAM["URIfetchTerm"]='fetchTerm/';
-	$CFG_URL_PARAM["search"]='index.php?task=search&amp;arg=';
-	$CFG_URL_PARAM["letter"]='index.php?task=letter&amp;arg=';
-	
-	//search strings with more than x chars
-	$CFG["MIN_CHAR_SEARCH"]=2;
-		
-
-
 ?>
