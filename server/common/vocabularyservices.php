@@ -312,13 +312,13 @@ function data2html4MappedTerms($data,$param=array()){
 	GLOBAL $URL_BASE;
 	GLOBAL $CFG_URL_PARAM;
 
+	$rows='';
 
 	if ($data->resume->cant_result >"0"){
 		$rows.='<div>';
 		$rows.='		<ul>';
 
 			foreach ($data->result->term as $value){
-				$i=++$i;
 				$rows.='<li><span about="'.$CFG_URL_PARAM["url_site"].$CFG_URL_PARAM["fetchTerm"].(int) $value->term_id.'" typeof="skos:Concept">';
 				$rows.=(string) $value->target_vocabulary_label.': <span resource="'.$CFG_URL_PARAM["url_site"].$CFG_URL_PARAM["fetchTerm"].(int) $value->term_id.'" property="skos:prefLabel" href="'.$CFG_URL_PARAM["url_site"].$CFG_URL_PARAM["fetchTerm"].(int) $value->term_id.'" title="'.(string) $value->string.'">'.(string) $value->string.'</span>';
 				$rows.='</span>';
@@ -449,7 +449,7 @@ function data2html4MappedURITerms($data,$param=array()){
 	GLOBAL $URL_BASE;
 	GLOBAL $CFG_URL_PARAM;
 
-
+	$rows='';
 	$rows.='<div>';
 	if($data->resume->cant_result > 0)	{
 	$rows.='<ul>';
@@ -900,4 +900,5 @@ function getURLbase(){
 
 	return $url_base;
 }
+
 ?>

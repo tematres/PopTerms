@@ -15,7 +15,7 @@ if(strlen($searchq)> $CFG["MIN_CHAR_SEARCH"]){
  * Retorna los datos, acorde al formato de autocompleter
  */
 function getData4Autocompleter($URL_BASE,$searchq){
-	$data=getURLdata($URL_BASE.'?task=suggestDetails&arg='.$searchq);
+	$data=getURLdata($URL_BASE.'?task=suggestDetails&arg='.rawurlencode($searchq));
 
 	$arrayResponse=array("query"=>$searchq,
 						 "suggestions"=>array(),

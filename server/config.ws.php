@@ -29,6 +29,9 @@ CONFIGURATION
 error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
  ini_set("display_errors", 1);
 */
+
+session_start();
+
 $URL_BASE='';
 $lang_tematres='';
 
@@ -36,7 +39,7 @@ $lang_tematres='';
  * Enables vocabularies services
  */
 $CFG_VOCABS[1]["ALIAS"]="DEMO";
-$CFG_VOCABS[1]["URL_BASE"]="http://vocabularyserver.com/unesco//en/services.php";
+$CFG_VOCABS[1]["URL_BASE"]="http://r020.com.ar/tematres/demo/services.php";
 $CFG_VOCABS[1]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 
 /*
@@ -56,15 +59,19 @@ $CFG["ENABLE_TASK"]=array("fetchTerm","search","letter","fetchLast");
 // lang :
 $lang_tematres = "es_AR" ;
 
-//$CFG_URL_PARAM["fetchTerm"]='term/';
-$CFG_URL_PARAM["fetchTerm"]='index.php?task=fetchTerm&amp;arg=';
-["URIfetchTerm"]='fetchTerm/';
-$CFG_URL_PARAM["search"]='index.php?task=search&amp;arg=';
-["letter"]='index.php?task=letter&amp;arg=';
-	
-//search strings with more than x chars
-$CFG["MIN_CHAR_SEARCH"]=2;
+	$URL_BASE=$_SESSION['_PARAMS']["URL_BASE"];
 
+	//$CFG_URL_PARAM["fetchTerm"]='term/';
+	$CFG_URL_PARAM["fetchTerm"]='index.php?task=fetchTerm&amp;arg=';
+	$CFG_URL_PARAM["URIfetchTerm"]='fetchTerm/';
+	$CFG_URL_PARAM["search"]='index.php?task=search&amp;arg=';
+	$CFG_URL_PARAM["letter"]='index.php?task=letter&amp;arg=';
+
+	//search strings with more than x chars
+	$CFG["MIN_CHAR_SEARCH"]=2;
+
+	//define some local notes, notes defined by vocabulary admin, for example
+	$CFG["LOCAL_NOTES"]["DEF"]='definition note';
 
 // change to whatever timezone you want
 if(date_default_timezone_get()!=ini_get('date.timezone')){
@@ -85,16 +92,13 @@ if ( !defined('WEBTHES_PATH') )
 	require_once("common/lang/$lang_tematres.php") ;
 	require_once('common/vocabularyservices.php');
 
-	
 
-/*fetch params*/
-session_start();
 	
-	if ((!isset($_SESSION['_PARAMS'])) || ($_GET["lc"]==1))	{
+	if ((!isset($_SESSION['_PARAMS'])) || ((isset($_GET["lc"]) && ($_GET["lc"]==1))))	{
 		$_SESSION['_PARAMS']["target_x"] = $_GET["tx"];
 		$_SESSION['_PARAMS']["vocab_id"] = loadVocabularyID($_GET["v"]);
 		$_SESSION['_PARAMS']["URL_BASE"] = $CFG_VOCABS[$_SESSION['_PARAMS']["vocab_id"]]["URL_BASE" ];
 	}
+	$CFG_URL_PARAM["url_site"]=getURLbase();
 
-	$URL_BASE=$_SESSION['_PARAMS']["URL_BASE"];
 ?>

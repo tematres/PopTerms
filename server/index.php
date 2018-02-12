@@ -21,7 +21,7 @@ if($vocabularyMetadata){
 
 				$div_data='<div id="term" about="'.$URL_BASE.$dataTerm->result->term->term_id.'" typeof="skos:Concept">';
 				$div_data.='<h2>'.$term.'</h2>';
-				$div_data.=$htmlTerm["results"]["breadcrumb"];
+				$div_data.=(@$htmlTerm["results"]["breadcrumb"]) ? $htmlTerm["results"]["breadcrumb"] : '';
 				$div_data.=$htmlTerm["results"]["termdata"];
 				$div_data.='<dl class="dl-horizontal">'.$htmlTerm["results"]["BT"].'</dl>';
 				$div_data.='<dl class="dl-horizontal">'.$htmlTerm["results"]["NT"].'</dl>';
@@ -126,7 +126,21 @@ if($vocabularyMetadata){
 		  a = $('#query').autocomplete(options);
 		});
 </script>
+<style type="text/css">
+	.affix {
+    top:75px;
+    right:10px;
+    position:fixed;
+}
 
+.affix {
+    top:75px;
+    position: fixed;
+   	width: 100%;
+	background-color:white;
+	z-index:777;
+}
+</style>
 </head>
 
 <body>
@@ -150,10 +164,9 @@ if($vocabularyMetadata){
     <!-- Page Content -->
     <div class="container">
 
-    <div class="control-group col-sm">
+    <div class="control-group col-sm affix">
 	<button type="button" class="close" aria-hidden="true" onclick="javascript:window.close()">&times;</button>
     </div>
-
         <div class="row">
             <div class="col-lg-12">
 		<?php

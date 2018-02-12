@@ -10,7 +10,7 @@ if($node>0){
 	$array_data=array();
 	foreach ($data->result->term as $value){
 				$load_on_demand=($value->hasMoreDown==0) ? false : true;
-				$link='<a href="'.$CFG_URL_PARAM["url_site"].'index.php?task=fetchTerm&arg='.$value->term_id.'" title="'.$value->string.'">'.$value->string.'</a>';
+				$link='<a href="index.php?task=fetchTerm&arg='.$value->term_id.'" title="'.$value->string.'">'.$value->string.'</a>';
 				$link.=HTMLcopyTerm($value,$param=array());
 
 				array_push($array_data, array("label"=>"$link",
@@ -24,7 +24,7 @@ if($node>0){
 	if($data->resume->cant_result > 0)	{
 	$array_data=array();
 	foreach ($data->result->term as $value){
-				$link='<a href="'.$CFG_URL_PARAM["url_site"].'index.php?task=fetchTerm&arg='.(int) $value->term_id.'" title="'.(string) $value->string.'">'.(string)$value->string.'</a>';
+				$link='<a href="index.php?task=fetchTerm&arg='.(int) $value->term_id.'" title="'.(string) $value->string.'">'.(string)$value->string.'</a>';
 				array_push($array_data, array("label"=>"$link",
                   "id"=>"$value->term_id",
                   "load_on_demand"=>true));
