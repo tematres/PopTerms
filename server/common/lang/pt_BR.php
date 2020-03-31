@@ -449,4 +449,8 @@ define('LABEL_Contributor','Coautor/Colaborador');
 define('LABEL_Rights','Derechos');
 define('LABEL_Publisher','Publicador');
 
+/*
+v1.x
+*/
+define('LABEL_terms_with_the_letter', "Términos con la letra ");
 ?>

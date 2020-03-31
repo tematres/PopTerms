@@ -2,10 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <link rel="shortcut icon" href="https://www.vocabularyserver.com/index_archivos/tematres.ico">    
+    <link rel="shortcut icon" href="https://www.vocabularyserver.com/index_archivos/tematres.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="PopTerms is a simple Web application that allows using controlled vocabularies managed TemaTres and integrate them with any web form or web application">
+    <meta name="description" content="PopTerms est un application web simple qui permet d'utiliser des vocabulaires gérés dans TemaTres et les intégrer avec n'importe quel formulaire ou application web.">
     <meta name="author" content="Diego Ferreyra">
 
     <title>Tematres pop terms</title>
@@ -41,10 +41,10 @@
                 <li><a href="http://www.vocabularyserver.com/popterms/">website</a></li>
                 <li><a href="https://github.com/tematres/popterms">github</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">english <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">français<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="./index.es.html">español</a></li>
-                        <li><a href="./index.fr.html">français</a></li>
+                        <li><a href="./index.html">english</a></li>
                     </ul>
                 </li>
             </ul>
@@ -56,7 +56,7 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <h1>PopTerms</h1>
-        <p>PopTerms is a simple Web application that allows using controlled vocabularies managed TemaTres and integrate them with any web form or web application.</p>
+        <p>PopTerms est un application web simple qui permet d'utiliser des vocabulaires gérés dans TemaTres et les intégrer avec n'importe quel formulaire ou application web.</p>
     </div>
 
 
@@ -64,42 +64,41 @@
         <div class="col-md-12">
             <!-- demoPopTerms Section -->
             <section>
-                <h1>Examples</h1>
+                <h1>Exemples</h1>
 
-                <p>One thesaurus term selection</p>
-                <a href="#" data-popterms-server="../server/"
+                <p>Sélection d'un terme d'un thésaurus</p>
+                <a href="#" data-popterms-server=".."
                    data-popterms-vocabulary="AFIP"
                    data-popterms-target="#afip"
-                > Select a term</a>
+                > Choisir un terme</a>
                 <br>
                 <input id="afip" class="order-input" type="text" size="100">
 
                 <hr>
 
-                <p>Multiple terms selection</p>
-                <button data-popterms-server="../server/"
+                <p>Sélection de termes multiples</p>
+                <button data-popterms-server=".."
                         data-popterms-vocabulary="SALUD"
                         data-popterms-multiple="true"
                         data-popterms-separator=" , "
                         data-popterms-target="#salud"
-                > Select terms</button>
+                > Choisir des termes</button>
                 <br>
                 <textarea id="salud" class="order-textarea" cols="50" rows="4"></textarea>
 
                 <hr>
 
-                <p>Usage of a div instead of an input or a textarea</p>
-                <button data-popterms-server="../server/"
-                        data-popterms-vocabulary="encab"
+                <p>Utilisation d'un div au lieu d'un input ou d'un textarea</p>
+                <button data-popterms-server=".."
+                        data-popterms-vocabulary="AFIP"
                         data-popterms-multiple="true"
                         data-popterms-separator="<br>"
                         data-popterms-target="#midiv"
-                > Select one or multiple terms</button>
+                > Choisir un ou plusieurs termes</button>
                 <br>
                 <div style="height:100px;border:1px solid #999;overflow:auto">
                     <div id="midiv"></div>
                 </div>
-
             </section>
         </div>
     </div>

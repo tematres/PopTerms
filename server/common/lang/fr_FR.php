@@ -18,6 +18,11 @@ define("TR_termino","Terme associé");
 define("TE_termino","Terme spécifique");
 define("TG_termino","Terme générique");
 define("UP_termino","Employé pour");
+define("TR_terminos","Termes associés");
+define("TE_terminos","Termes spécifiques");
+define("TG_terminos","Termes généraux");
+define("UP_terminos","Employé pour");
+define("PREF_termino","Terme préféré");
 /* v 9.5 */
 define("USE_termino","USE");
 
@@ -444,4 +449,9 @@ define('LABEL_update1_4x1_5','Update (1.4 -> 1.5)');
 define('LABEL_Contributor','contributor');
 define('LABEL_Rights','rights');
 define('LABEL_Publisher','publisher');
+
+/*
+v1.x
+*/
+define('LABEL_terms_with_the_letter', "Termes avec la lettre ");
 ?>

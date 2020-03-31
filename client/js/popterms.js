@@ -1,4 +1,4 @@
-﻿
+
 var PopTerms = function ()
 {
 	var width = 450;

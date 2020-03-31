@@ -447,4 +447,9 @@ define('LABEL_update1_4x1_5','Update (1.4 -> 1.5)');
 define('LABEL_Contributor','contributor');
 define('LABEL_Rights','rights');
 define('LABEL_Publisher','publisher');
+
+/*
+v1.x
+*/
+define('LABEL_terms_with_the_letter', "Terms with the letter ");
 ?>

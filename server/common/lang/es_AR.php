@@ -430,4 +430,9 @@ define('LABEL_update1_4x1_5','Actualizar (1.4 -> 1.5)');
 define('LABEL_Contributor','Coautor/Colaborador');
 define('LABEL_Rights','Derechos');
 define('LABEL_Publisher','Publicador');
+
+/*
+v1.x
+*/
+define('LABEL_terms_with_the_letter', "Términos con la letra ");
 ?>
