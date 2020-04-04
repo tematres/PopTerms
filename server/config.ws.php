@@ -55,10 +55,51 @@ $CFG_VOCABS[3]["ALIAS"]="occupation";
 $CFG_VOCABS[3]["URL_BASE"]="http://eured.univ-lemans.fr/thesaurus/occupation/services.php";
 $CFG_VOCABS[3]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 
-$CFG_VOCABS[3]["ALIAS"]="encab";
-$CFG_VOCABS[3]["URL_BASE"]="https://vocabularyserver.com/bne/encabezamientos/services.php";
-$CFG_VOCABS[3]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-$CFG_VOCABS[3]["TREE"]=0;
+$CFG_VOCABS[4]["ALIAS"]="encab";
+$CFG_VOCABS[4]["URL_BASE"]="https://vocabularyserver.com/bne/encabezamientos/services.php";
+$CFG_VOCABS[4]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+$CFG_VOCABS[4]["TREE"]=0;
+
+//TTLA
+$CFG_VOCABS[5]["ALIAS"]="TTLA_FR";
+$CFG_VOCABS[5]["URL_BASE"]="https://vocabularyserver.com/ttla/fr/services.php";
+$CFG_VOCABS[5]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+$CFG_VOCABS[6]["ALIAS"]="TTLA_EN";
+$CFG_VOCABS[6]["URL_BASE"]="https://vocabularyserver.com/ttla/en/services.php";
+$CFG_VOCABS[6]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+$CFG_VOCABS[7]["ALIAS"]="TTLA_ES";
+$CFG_VOCABS[7]["URL_BASE"]="https://vocabularyserver.com/ttla/es/services.php";
+$CFG_VOCABS[7]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+//UNBIS
+$CFG_VOCABS[8]["ALIAS"]="UNBIS_FR";
+$CFG_VOCABS[8]["URL_BASE"]="https://vocabularyserver.com/unbis/fr/services.php";
+$CFG_VOCABS[8]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+$CFG_VOCABS[9]["ALIAS"]="UNBIS_EN";
+$CFG_VOCABS[9]["URL_BASE"]="https://vocabularyserver.com/unbis/en/services.php";
+$CFG_VOCABS[9]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+$CFG_VOCABS[10]["ALIAS"]="UNBIS_ES";
+$CFG_VOCABS[10]["URL_BASE"]="https://vocabularyserver.com/unbis/es/services.php";
+$CFG_VOCABS[10]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+
+$CFG_VOCABS[11]["ALIAS"]="ARCH_FR";
+$CFG_VOCABS[11]["URL_BASE"]="https://www.vocabularyserver.com/architectura/services.php";
+$CFG_VOCABS[11]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+$CFG_VOCABS[12]["ALIAS"]="CSO_EN";
+$CFG_VOCABS[12]["URL_BASE"]="https://vocabularyserver.com/cso/services.php";
+$CFG_VOCABS[12]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
+//EUROVOC
+$CFG_VOCABS[13]["ALIAS"]="EUROVOC_ES";
+$CFG_VOCABS[13]["URL_BASE"]="https://www.vocabularyserver.com/eurovoc/es/services.php";
+$CFG_VOCABS[13]["ALPHA"]=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+
 
 
 /*In almost cases, you don't need to touch nothing here!!*/
